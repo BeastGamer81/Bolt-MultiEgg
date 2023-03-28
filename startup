@@ -1,2 +1,2 @@
 #!/bin/bash
-bash <(curl -s https://raw.githubusercontent.com/BeastGamer81/main/dev.sh)
+bash <(curl -s https://raw.githubusercontent.com/BeastGamer81/Zexade-MultiEgg/main/dev.sh)
