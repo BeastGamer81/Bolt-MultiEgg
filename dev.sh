@@ -288,15 +288,3 @@ case $n in
     echo "Invalid option, exiting..."
     exit
   ;;
-esac  
-else
-if [ -f plugins ]; then
-mkdir plugins
-fi
-
-if [ -d plugins ]; then
-  mkdir -p plugins
-fi
-  display   
-  launchJavaServer
-fi
