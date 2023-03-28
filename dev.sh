@@ -10,13 +10,13 @@ function display {
 
     ==========================================================================
 
-    $(tput setaf 6)    ##########     ############
-    $(tput setaf 6)            #      #
-    $(tput setaf 6)          #        #
-    $(tput setaf 6)        #          #########
-    $(tput setaf 6)      #            #
-    $(tput setaf 6)    #              #
-    $(tput setaf 6)   ###########     ###########
+    $(tput setaf 6)    ##########     ###########   #           #             #             #  #        ###########
+    $(tput setaf 6)            #      #               #       #              # #            #    #      #
+    $(tput setaf 6)          #        #                 #   #               #   #           #     #     #
+    $(tput setaf 6)        #          #########           #                #     #          #      #    ##########
+    $(tput setaf 6)      #            #                 #   #             #########         #      #    #
+    $(tput setaf 6)    #              #               #       #          #         #        #    #      #
+    $(tput setaf 6)   ###########     ###########   #           #       #           #       #  #        ###########
 
     ==========================================================================
 
@@ -24,14 +24,7 @@ function display {
 }
 
 function forceStuffs {
-  # Forcing Default Server Icon.
-  curl -O https://media.discordapp.net/attachments/944177397228511234/945187873919995964/server-icon.png
-
-  # Forcing Hibernate Plugin.
-  curl -o plugins/alactichost.jar https://cdn.discordapp.com/attachments/944177397228511234/945181383016464384/alactichost.jar
-
-  # Forcing MOTD.
-  echo "motd=\u00a7fThis server is hosted on \u00a79AlacticHost.com\u00a7r\n\u00a77You can change this MOTD in server.properties" >> server.properties
+  echo "motd=\u00a7fThis server is hosted on \u00a79Zexade.com\u00a7r\n\u00a77You can change this MOTD in server.properties" >> server.properties
 }
 
 function launchJavaServer {
@@ -98,8 +91,12 @@ case $n in
     sleep 4
 
     forceStuffs
-
-    curl -O https://cdn.discordapp.com/attachments/904385467359842345/947085351443394570/paper-server.jar
+     if [ -f "server.jar" ];
+     then 
+    optimizeJavaServer
+    launchJavaServer
+    else 
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.8.8/builds/445/downloads/paper-1.8.8-445.jar server.jar
 
     display
     
@@ -121,8 +118,12 @@ case $n in
     sleep 4
 
     forceStuffs
-
-    curl -O https://cdn.discordapp.com/attachments/904385467359842345/947085463896870942/paper-server.jar
+     if [ -f "server.jar" ];
+     then 
+    optimizeJavaServer
+    launchJavaServer
+    else 
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.12.2/builds/1620/downloads/paper-1.12.2-1620.jar server.jar
 
     display   
 
@@ -142,10 +143,14 @@ case $n in
     echo "$(tput setaf 3)Ok, I will download 1.16.5 and start it for you."
 
     sleep 4
-
+     if [ -f "server.jar" ];
+     then 
+    optimizeJavaServer
+    launchJavaServer
+    else 
     forceStuffs
 
-    curl -O https://cdn.discordapp.com/attachments/904385467359842345/947085612710756412/paper-server.jar
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.17.1-411.jar server.jar
 
     display   
 
@@ -167,8 +172,12 @@ case $n in
     sleep 4
 
     forceStuffs
-
-    curl -O https://download2276.mediafire.com/5dptw00gq4mg/dcnk3b1x0h1aial/paper-server.jar
+     if [ -f "server.jar" ];
+     then 
+    optimizeJavaServer
+    launchJavaServer
+    else 
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.17.1-411.jar server.jar
 
     display
 
@@ -188,8 +197,12 @@ case $n in
     sleep 4
 
     forceStuffs
-
-    curl -O https://cdn.discordapp.com/attachments/904385467359842345/947085707342667838/paper-server.jar
+     if [ -f "server.jar" ];
+     then 
+    optimizeJavaServer
+    launchJavaServer
+    else 
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/388/downloads/paper-1.18.2-388.jar server.jar
 
     display
 
@@ -200,8 +213,30 @@ case $n in
     optimizeJavaServer
     launchJavaServer
   ;;
-
   6)
+     sleep 1
+
+    echo "$(tput setaf 3)Ok, I will download 1.18.1 and start it for you."
+
+    sleep 4
+
+    forceStuffs
+     if [ -f "server.jar" ];
+     then 
+    optimizeJavaServer
+    launchJavaServer
+    else 
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.19.4/builds/477/downloads/paper-1.19.4-477.jar server.jar
+
+    display
+
+    sleep 10
+
+    echo -e ""
+
+    optimizeJavaServer
+    
+  7)
     echo "$(tput setaf 3)Ok, I will download lasted Bungeecord and start it for you."
 
     curl -O https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
@@ -209,12 +244,6 @@ case $n in
     display 
 
     java -Xms512M -Xmx512M -jar BungeeCord.jar
-  ;;
-
-  7)
-    echo ""
-    echo "This platform is not available yet, please check back later. (COMING_SOON)"
-    exit
   ;;
 
   8)
@@ -230,6 +259,12 @@ case $n in
   ;;
 
   10)
+    echo ""
+    echo "This platform is not available yet, please check back later. (COMING_SOON)"
+    exit
+  ;;
+
+  11)
     echo ""
     echo "This platform is not available yet, please check back later. (COMING_SOON)"
     exit
