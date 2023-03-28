@@ -8,17 +8,17 @@ function display {
     #Display MOTD
     echo "
 
-    ==========================================================================
+    ===================================================================================================================
 
     $(tput setaf 6)    ##########     ###########   #           #             #             #  #        ###########
-    $(tput setaf 6)            #      #               #       #              # #            #    #      #
-    $(tput setaf 6)          #        #                 #   #               #   #           #     #     #
+    $(tput setaf 6)            #      #               #       #              # #            #     #     #
+    $(tput setaf 6)          #        #                 #   #               #   #           #      #    #
     $(tput setaf 6)        #          #########           #                #     #          #      #    ##########
     $(tput setaf 6)      #            #                 #   #             #########         #      #    #
-    $(tput setaf 6)    #              #               #       #          #         #        #    #      #
+    $(tput setaf 6)    #              #               #       #          #         #        #     #     #
     $(tput setaf 6)   ###########     ###########   #           #       #           #       #  #        ###########
 
-    ==========================================================================
+    ====================================================================================================================
 
     "  
 }
@@ -29,7 +29,7 @@ function forceStuffs {
 
 function launchJavaServer {
   # Using Aikars flags.
-  java -Xms1024M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar paper-server.jar nogui
+  java -Xms1024M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar server.jar nogui
 }
 FILE=eula.txt
 
@@ -68,25 +68,24 @@ then
 sleep 5
 echo "
 
-  $(tput setaf 1)If you found any bug or errors, please submit it to me via adrea#6661.
+  $(tput setaf 1)If you found any bug or errors, please submit it to me via dark@bolthost.xyz.
 
   $(tput setaf 3)Which platform are you gonna use?
 
-  1) Paper 1.8.8       6)  BungeeCord 
-  2) Paper 1.12.2      7)  Bedrock Lastest
-  3) Paper 1.16.5      8)  Pocketmine MP
-  4) Paper 1.17.1      9)  Discord NodeJS 
-  5) Paper 1.18.1      10) Discord Python
+  1) Minecraft Java 1.8.8   (PaperMC)    6)  Minecraft Java 1.19.4 (PaperMC)        11)  Discord Python
+  2) Minecraft Java 1.12.2  (PaperMC)    7)  BungeeCord
+  3) Minecraft Java 1.16.5  (PaperMC)    8)  Bedrock
+  4) Minecraft Java 1.17.1  (PaperMC)    9)  Pocketmine MP 
+  5) Minecraft Java 1.18.1  (PaperMC)    10) Discord JS
 
   "
 read -r n
 
-# I was uploading all the server jars to Discord because I was in hurry for vacation lol, will do a complete recode soon.
 case $n in
   1) 
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download 1.8.8 and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.8.8 and start it for you."
 
     sleep 4
 
@@ -113,7 +112,7 @@ case $n in
   2) 
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download 1.12.2 and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.12.2 and start it for you."
 
     sleep 4
 
@@ -140,7 +139,7 @@ case $n in
   3) 
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download 1.16.5 and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.16.5 and start it for you."
 
     sleep 4
      if [ -f "server.jar" ];
@@ -167,7 +166,7 @@ case $n in
   4)
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download 1.17.1 and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.17.1 and start it for you."
 
     sleep 4
 
@@ -192,7 +191,7 @@ case $n in
   5) 
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download 1.18.1 and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.18.1 and start it for you."
 
     sleep 4
 
@@ -216,7 +215,7 @@ case $n in
   6)
      sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download 1.18.1 and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.18.1 server and start it for you."
 
     sleep 4
 
@@ -237,7 +236,7 @@ case $n in
     optimizeJavaServer
     
   7)
-    echo "$(tput setaf 3)Ok, I will download lasted Bungeecord and start it for you."
+    echo "$(tput setaf 3)Ok, I will download latest Bungeecord Server and start it for you."
 
     curl -O https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
 
@@ -247,9 +246,13 @@ case $n in
   ;;
 
   8)
-    echo ""
-    echo "This platform is not available yet, please check back later. (COMING_SOON)"
-    exit
+    echo "$(tput setaf 3)Ok, I will download latest Bedrock Server and start it for you."
+    
+    curl -O https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.72.01.zip && unzip bedrock-server-1.19.72.01.zip $$ mv bedrock-server-1.19.72.01/* * && rm -rf bedrock-server-1.19.72.01
+    
+    display
+    
+    ./bedrock_server
   ;;
 
   9)
@@ -279,21 +282,10 @@ else
 if [ -f plugins ]; then
 mkdir plugins
 fi
-if [ -f BungeeCord.jar ]; then
-  display
-  java -Xms512M -Xmx512M -jar BungeeCord.jar
-else
-if [ ! -f hA5AW4Ni6Si6S4WvZ4WvZhA5AW4N.png ]; then
-# Force the server icon.
-curl -O https://media.discordapp.net/attachments/944177397228511234/945187873919995964/server-icon.png
-fi
+
 if [ -d plugins ]; then
   mkdir -p plugins
 fi
-# Redownload the Hibernate jar incase someone delete it.
-  curl -o plugins/alactichost.jar https://cdn.discordapp.com/attachments/944177397228511234/945181383016464384/alactichost.jar
   display   
   launchJavaServer
-fi
-fi
 fi
