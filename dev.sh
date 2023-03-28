@@ -256,23 +256,34 @@ case $n in
   ;;
 
   9)
-    echo ""
-    echo "This platform is not available yet, please check back later. (COMING_SOON)"
-    exit
+    echo "$(tput setaf 3)Ok, I will download latest PocketMine MP Server and start it for you."
+    
+    curl -O https://github.com/pmmp/PocketMine-MP/releases/download/4.18.1/PocketMine-MP.phar
+    
+    display
+    
+    .\/bin\/php7\/bin\/php .\/PocketMine-MP.phar --no-wizard --disable-ansi
   ;;
 
   10)
-    echo ""
-    echo "This platform is not available yet, please check back later. (COMING_SOON)"
-    exit
+     echo "$(tput setaf 3)Ok, I will download latest DiscordJS Server and start it for you."
+     
+     echo "$(tput setaf 1)You have to change the docker image because of this Server Type, otherwise it will not work. Please go to the Startup tab, and change the docker image to NodeJS."
+     
+     display
+     
+     node .
   ;;
 
   11)
-    echo ""
-    echo "This platform is not available yet, please check back later. (COMING_SOON)"
-    exit
+     echo "$(tput setaf 3)Ok, I will download latest DiscordPY Server and start it for you."
+     
+     echo "$(tput setaf 1)You have to change the docker image because of this Server Type, otherwise it will not work. Please go to the Startup tab, and change the docker image to Python."
+     
+     display
+     
+     python app.py
   ;;
-
   *) 
     echo "Invalid option, exiting..."
     exit
