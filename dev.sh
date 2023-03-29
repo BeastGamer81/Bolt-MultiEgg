@@ -85,21 +85,17 @@ case $n in
   1) 
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.8.8 and start it for you."
+    echo "$(tput setaf 3)Starting the download for 1.8.8 please wait"
 
     sleep 4
 
     forceStuffs
-     if [ -f "server.jar" ];
-     then 
-    optimizeJavaServer
-    launchJavaServer
-    else 
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.8.8/builds/445/downloads/paper-1.8.8-445.jar server.jar
+
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.8.8/builds/445/downloads/paper-1.8.8-445.jar
 
     display
     
-    echo "$(tput setaf 1)You have to change the docker image because of this version, otherwise it will not work. Please go to the Startup tab, and change the docker image to Java 8."
+    echo "$(tput setaf 1)Invalid docker image. Change it to java 8"
     
     sleep 10
     
@@ -109,24 +105,20 @@ case $n in
     launchJavaServer
   ;;
 
-  2) 
+2) 
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.12.2 and start it for you."
+    echo "$(tput setaf 3)Starting the download for 1.12.2 please wait"
 
     sleep 4
 
     forceStuffs
-     if [ -f "server.jar" ];
-     then 
-    optimizeJavaServer
-    launchJavaServer
-    else 
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.12.2/builds/1620/downloads/paper-1.12.2-1620.jar server.jar
+
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.12.2/builds/1620/downloads/paper-1.12.2-1620.jar
 
     display   
 
-    echo "$(tput setaf 1)You have to change the docker image because of this version, otherwise it will not work. Please go to the Startup tab, and change the docker image to Java 11."
+    echo "$(tput setaf 1)Invalid docker image, otherwise it will not work.Change it to java 11"
     
     sleep 10
 
@@ -142,11 +134,8 @@ case $n in
     echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.16.5 and start it for you."
 
     sleep 4
-     if [ -f "server.jar" ];
-     then 
     optimizeJavaServer
     launchJavaServer
-    else 
     forceStuffs
 
     curl -O https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.17.1-411.jar server.jar
@@ -171,11 +160,8 @@ case $n in
     sleep 4
 
     forceStuffs
-     if [ -f "server.jar" ];
-     then 
     optimizeJavaServer
     launchJavaServer
-    else 
     curl -O https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.17.1-411.jar server.jar
 
     display
@@ -196,15 +182,14 @@ case $n in
     sleep 4
 
     forceStuffs
-     if [ -f "server.jar" ];
-     then 
     optimizeJavaServer
     launchJavaServer
-    else 
     curl -O https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/388/downloads/paper-1.18.2-388.jar server.jar
 
     display
-
+    
+    echo "$(tput setaf 1)You have to change the docker image because of this version, otherwise it will not work. Please go to the Startup tab, and change the docker image to Java 16."
+    
     sleep 10
 
     echo -e ""
@@ -220,11 +205,8 @@ case $n in
     sleep 4
 
     forceStuffs
-     if [ -f "server.jar" ];
-     then 
     optimizeJavaServer
     launchJavaServer
-    else 
     curl -O https://api.papermc.io/v2/projects/paper/versions/1.19.4/builds/477/downloads/paper-1.19.4-477.jar server.jar
 
     display
@@ -234,7 +216,7 @@ case $n in
     echo -e ""
 
     optimizeJavaServer
-    
+    ;;
   7)
     echo "$(tput setaf 3)Ok, I will download latest Bungeecord Server and start it for you."
 
@@ -288,3 +270,20 @@ case $n in
     echo "Invalid option, exiting..."
     exit
   ;;
+esac
+else
+if [ -f plugins ]; then
+mkdir plugins
+fi
+if [ -f BungeeCord.jar ]; then
+  display
+  java -Xms512M -Xmx512M -jar BungeeCord.jar
+else
+if [ -d plugins ]; then
+  mkdir -p plugins
+fi
+  display   
+  launchJavaServer
+fi
+fi
+fi
