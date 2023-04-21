@@ -9,22 +9,22 @@ function display {
     echo "
 
     ===================================================================================================================
-
-    $(tput setaf 6)    ##########     ###########   #           #             #             #  #        ###########
-    $(tput setaf 6)            #      #               #       #              # #            #     #     #
-    $(tput setaf 6)          #        #                 #   #               #   #           #      #    #
-    $(tput setaf 6)        #          #########           #                #     #          #      #    ##########
-    $(tput setaf 6)      #            #                 #   #             #########         #      #    #
-    $(tput setaf 6)    #              #               #       #          #         #        #     #     #
-    $(tput setaf 6)   ###########     ###########   #           #       #           #       #  #        ###########
-
+                           
+$(tput setaf 6) ██████╗░░█████╗░██╗░░░░░████████╗██╗░░██╗░█████╗░░██████╗████████╗
+$(tput setaf 6) ██╔══██╗██╔══██╗██║░░░░░╚══██╔══╝██║░░██║██╔══██╗██╔════╝╚══██╔══╝
+$(tput setaf 6) ██████╦╝██║░░██║██║░░░░░░░░██║░░░███████║██║░░██║╚█████╗░░░░██║░░░
+$(tput setaf 6) ██╔══██╗██║░░██║██║░░░░░░░░██║░░░██╔══██║██║░░██║░╚═══██╗░░░██║░░░
+$(tput setaf 6) ██████╦╝╚█████╔╝███████╗░░░██║░░░██║░░██║╚█████╔╝██████╔╝░░░██║░░░
+$(tput setaf 6) ╚═════╝░░╚════╝░╚══════╝░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚═════╝░░░░╚═╝░░░
     ====================================================================================================================
 
     "  
 }
 
 function forceStuffs {
-  echo "motd=\u00a7fThis server is hosted on \u00a79Zexade.com\u00a7r\n\u00a77You can change this MOTD in server.properties" >> server.properties
+  echo "motd=\u00a7fThis server is hosted on \u00a79BoltHost.xyz\u00a7r\n\u00a77You can change this MOTD in server.properties" >> server.properties
+  curl -O 
+  curl -O https://images-ext-2.discordapp.net/external/6hV7-yR-ftcCPt46OkKuf6FllFkJgfPFXonKfCqOMto/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1096388578461884507/395555e09a48bf86c641c008697f62e9.png && mv 395555e09a48bf86c641c008697f62e9.png server-icon.png 
 }
 
 function launchJavaServer {
@@ -40,16 +40,16 @@ function optimizeJavaServer {
   echo "view-distance=6" >> server.properties
 
   # Slows down incremental chunk saving during the world save task
-  # echo "max-auto-save-chunks-per-tick: 10" >> paper.yml
+  echo "max-auto-save-chunks-per-tick: 10" >> paper.yml
   
   # Optimize explosions.
-  # echo "optimize-explosions: true" >> paper.yml
+  echo "optimize-explosions: true" >> paper.yml
   
   # Disable overload warnings
-  # echo "warn-on-overload: false" >> spigot.yml
+  echo "warn-on-overload: false" >> spigot.yml
 
   # Prevents players from entering an unloaded chunk (due to lag), which causes more lag.
-  # echo "prevent-moving-into-unloaded-chunks: true" >> paper.yml
+  echo "prevent-moving-into-unloaded-chunks: true" >> paper.yml
   
 }
 if [ ! -f "$FILE" ]
