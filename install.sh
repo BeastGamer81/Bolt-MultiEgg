@@ -67,7 +67,7 @@ echo "
   2) Minecraft Java 1.12.2  (PaperMC)    7)  BungeeCord
   3) Minecraft Java 1.16.5  (PaperMC)    8)  Bedrock
   4) Minecraft Java 1.17.1  (PaperMC)    9)  Pocketmine MP 
-  5) Minecraft Java 1.18.1  (PaperMC)    10) Discord JS
+  5) Minecraft Java 1.18.2  (PaperMC)    10) Discord JS
 
   "
 read -r n
@@ -129,7 +129,7 @@ case $n in
     launchJavaServer
     forceStuffs
 
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.17.1-411.jar server.jar
+    curl -O https://api.papermc.io/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.16.5-794.jar
 
     display   
 
@@ -168,7 +168,7 @@ case $n in
   5) 
     sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.18.1 and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.18.2 and start it for you."
 
     sleep 4
 
@@ -191,7 +191,7 @@ case $n in
   6)
      sleep 1
 
-    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.18.1 server and start it for you."
+    echo "$(tput setaf 3)Ok, I will download Minecraft Java 1.19.4 server and start it for you."
 
     sleep 4
 
