@@ -59,7 +59,7 @@ then
 sleep 5
 echo "
 
-  $(tput setaf 1)If you found any bug or errors, please submit it to us via report@zexade.com or create a ticket in our Discord server: discord.gg/besthost.
+  $(tput setaf 1)If you found any bug or errors, please submit it to us via dark@bolthost.xyz or create a ticket in our Discord server: https://discord.bolthost.xyz.
 
   $(tput setaf 3)Which platform are you gonna use?
 
