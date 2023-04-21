@@ -82,7 +82,7 @@ case $n in
 
     forceStuffs
 
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.8.8/builds/445/downloads/paper-1.8.8-445.jar
+    curl -O server.jar https://api.papermc.io/v2/projects/paper/versions/1.8.8/builds/445/downloads/paper-1.8.8-445.jar
 
     display
     
@@ -105,7 +105,7 @@ case $n in
 
     forceStuffs
 
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.12.2/builds/1620/downloads/paper-1.12.2-1620.jar
+    curl -O server.jar https://api.papermc.io/v2/projects/paper/versions/1.12.2/builds/1620/downloads/paper-1.12.2-1620.jar
 
     display   
 
@@ -129,7 +129,7 @@ case $n in
     launchJavaServer
     forceStuffs
 
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.16.5-794.jar
+    curl -O server.jar https://api.papermc.io/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.16.5-794.jar
 
     display   
 
@@ -153,7 +153,7 @@ case $n in
     forceStuffs
     optimizeJavaServer
     launchJavaServer
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.17.1-411.jar server.jar
+    curl -O server.jar https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.17.1-411.jar
 
     display
 
@@ -175,7 +175,7 @@ case $n in
     forceStuffs
     optimizeJavaServer
     launchJavaServer
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/388/downloads/paper-1.18.2-388.jar server.jar
+    curl -O server.jar https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/388/downloads/paper-1.18.2-388.jar
 
     display
     
@@ -198,7 +198,7 @@ case $n in
     forceStuffs
     optimizeJavaServer
     launchJavaServer
-    curl -O https://api.papermc.io/v2/projects/paper/versions/1.19.4/builds/477/downloads/paper-1.19.4-477.jar server.jar
+    curl -O server.jar https://api.papermc.io/v2/projects/paper/versions/1.19.4/builds/477/downloads/paper-1.19.4-477.jar
 
     display
 
@@ -211,7 +211,7 @@ case $n in
   7)
     echo "$(tput setaf 3)Ok, I will download latest Bungeecord Server and start it for you."
 
-    curl -O https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
+    curl -O BungeeCord.jar https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
 
     display 
 
@@ -221,7 +221,7 @@ case $n in
   8)
     echo "$(tput setaf 3)Ok, I will download latest Bedrock Server and start it for you."
     
-    curl -O https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.72.01.zip && unzip bedrock-server-1.19.72.01.zip $$ mv bedrock-server-1.19.72.01/* * && rm -rf bedrock-server-1.19.72.01
+    curl -O bedrock-server-1.19.72.01.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.72.01.zip && unzip bedrock-server-1.19.72.01.zip $$ mv bedrock-server-1.19.72.01/* * && rm -rf bedrock-server-1.19.72.01
     
     display
     
@@ -231,7 +231,7 @@ case $n in
   9)
     echo "$(tput setaf 3)Ok, I will download latest PocketMine MP Server and start it for you."
     
-    curl -O https://github.com/pmmp/PocketMine-MP/releases/download/4.18.1/PocketMine-MP.phar
+    curl -O PocketMine-MP.phar https://github.com/pmmp/PocketMine-MP/releases/download/4.18.1/PocketMine-MP.phar
     
     display
     
