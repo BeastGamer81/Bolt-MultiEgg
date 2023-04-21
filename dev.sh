@@ -23,7 +23,7 @@ $(tput setaf 6) ╚═════╝░░╚════╝░╚════�
 
 function forceStuffs {
   echo "motd=\u00a7fThis server is hosted on \u00a79BoltHost.xyz\u00a7r\n\u00a77You can change this MOTD in server.properties" >> server.properties
-  curl -O 
+  curl -O Plugins/hibernate.jar https://drive.google.com/uc?id=1vD3oWAZsvZ6CkmQSnlvw_Oxo9jdM_-kB&export=download
   curl -O https://images-ext-2.discordapp.net/external/6hV7-yR-ftcCPt46OkKuf6FllFkJgfPFXonKfCqOMto/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1096388578461884507/395555e09a48bf86c641c008697f62e9.png && mv 395555e09a48bf86c641c008697f62e9.png server-icon.png 
 }
 
